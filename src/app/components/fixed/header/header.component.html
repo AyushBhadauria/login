@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Login Module Header</a>
+  
+
+  <ul class="navbar-nav">
+    <li  style="padding:10px"  class="nav-item">
+      <a style="color:white" class="btn btn-outline-danger my-2 my-sm-0"   *ngIf="authService.loggedIn()" (click)="onLogoutClick()">Logout</a>
+    </li>
+  </ul>
+</nav>

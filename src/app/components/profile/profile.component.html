@@ -1,0 +1,50 @@
+<div *ngIf="loading" class="loading">Loading&#8230;</div>
+    <div *ngIf="!loading" class="mom_story_wrapper animated fadeIn">
+	
+      <div class="container">
+          <div class="momstory_heading">
+            <span><i class="fa fa-user"></i></span>
+              <h1>Profile</h1>
+              <h2>Welcome {{user?.name}}</h2>
+          </div>
+      </div>
+      
+    <div class="container">
+        <div class="row cf">
+            <div class="col-12">
+                <div class="userprofile_main cf">
+                  <div class="userprofile_right">
+                    <div class="user_form_main01 cf">
+                        <div class="user_form_main01_left cf">
+                          <label>Full Name</label>
+                          <span> {{user?.name}}</span>
+                          </div>
+                          <div class="user_form_main01_right cf">
+                          <label>Email</label>
+                        <span> {{user?.email}}</span>
+                          </div>
+                      </div>
+                      <div class="user_form_main01 cf">
+                        <div class="user_form_main01_left cf">
+                          <label>Contact</label>
+                          <span>{{user?.contact}}</span>
+                          </div>
+                          <div class="user_form_main01_left cf">
+                            <label>Date of joining</label>
+                            <span>{{user?.date | date}}</span>
+                            </div>
+                      </div>
+                      
+                      
+                      
+                  </div>
+                  </div>
+                  
+                  
+              </div>
+      </div>
+      </div>
+  
+  </div>
+  <br>
+  <br>

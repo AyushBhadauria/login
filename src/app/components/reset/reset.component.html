@@ -1,0 +1,37 @@
+<div *ngIf=loading class="loading">Loading&#8230;</div>
+
+<div class="login_wrapper">
+	
+		<div class="container">
+			<div class="row cf">
+				<div class="col-12">
+					<div class="login_main01 animated fadeInUp">
+						<h1>Welcome To ThankMummy</h1>
+						<h2>Reset Password</h2>
+						<div *ngIf="error" class="alert alert-danger"><strong>{{error}}</strong></div>
+						<div *ngIf="success" class="alert alert-success">{{success}}</div>
+						<form  [formGroup]="form" (ngSubmit)="onReset(form.value)" id="myForm" *ngIf="!success">
+						<div class="login_form01">
+							<input  type="password"  formControlName="newPass" placeholder=" Enter New Password">
+						</div>
+						<div style="color:red" *ngIf="newPass.touched && newPass.invalid"  role="alert">
+								<div style="color:red" *ngIf="newPass.errors.required"><strong>New Password Is Required</strong> </div>
+								<div style="color:red" *ngIf="newPass.errors.invalidPassword"><strong>Password should be valid</strong> </div>
+							</div>
+						<div class="login_form01">
+								<input  type="password"   formControlName="confirmPass"  placeholder="Confirm  Password">
+						</div>
+						<div style="color:red" *ngIf="confirmPass.touched && confirmPass.invalid"  role="alert">
+							<div style="color:red" *ngIf="confirmPass.errors.required"><strong>Confirm Password Is Required</strong> </div>
+			            </div>
+						<div style="color:red" *ngIf="confirmPass.touched && confirmPass.valid && newPass.value!=confirmPass.value">Password Not Match</div>
+						<div class="login_form01">
+							<input [disabled]="!form.valid" type="submit" value="Change Password">
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
